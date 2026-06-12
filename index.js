@@ -150,23 +150,20 @@ bot.on("message", async (msg) => {
     // General Q&A using LLM
     try {
       const response = await axios.post(
-        `${llmConfig.apiUrl}/chat/completions`,
+        `${LLM_API_URL}`,
+
         {
           model: LLM_MODEL,
           messages: [{ role: "user", content: text }],
         },
         {
           headers: {
-            "Authorization": `Bearer ${LLM_API_KEY}`,
-            "Content-Type": "application/json",
-            headers: {
-  Authorization: `Bearer ${llmConfig.apiKey}`,
+  "Authorization": `Bearer ${LLM_API_KEY}`,
   "Content-Type": "application/json",
   "HTTP-Referer": "https://railway.app",
   "X-Title": "Saeed-Twin",
 },
 
-          },
         }
       );
       bot.sendMessage(chatId, response.data.choices[0].message.content);
