@@ -3,8 +3,8 @@ const TelegramBot = require("node-telegram-bot-api");
 const express = require("express");
 const bodyParser = require("body-parser");
 const axios = require("axios");
-const { readLatestEmails, sendEmail, searchEmails } = require("./.agents/skills/email-manager/email-manager.js");
-const { generateSocialMediaPost, postToX, postToLinkedIn, postToInstagram } = require("./.agents/skills/social-media-manager/social-media-manager.js");
+const { readLatestEmails, sendEmail, searchEmails } = require("./skills/email-manager/email-manager.js");
+const { generateSocialMediaPost, postToX, postToLinkedIn, postToInstagram } = require("./skills/social-media-manager/social-media-manager.js");
 
 // Replace with your Telegram bot token
 const token = process.env.TELEGRAM_BOT_TOKEN;
